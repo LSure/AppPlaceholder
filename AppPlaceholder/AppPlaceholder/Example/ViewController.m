@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SureTableViewController.h"
 #import "SureCustomViewController.h"
+#import "MultiGroupTableViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -29,13 +30,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID" forIndexPath:indexPath];
     NSArray *textArr = @[@"UITableViewPlaceholder",
-                         @"CustomPlaceholder"];
+                         @"CustomPlaceholder",
+                         @"MultiGroupTableView"];
     cell.textLabel.text = textArr[indexPath.row];
     return cell;
 }
@@ -48,6 +50,9 @@
             break;
         case 1:
             [self.navigationController pushViewController:[[SureCustomViewController alloc]init ] animated:YES];
+            break;
+        case 2:
+            [self.navigationController pushViewController:[[MultiGroupTableViewController alloc]init ] animated:YES];
             break;
             
         default:

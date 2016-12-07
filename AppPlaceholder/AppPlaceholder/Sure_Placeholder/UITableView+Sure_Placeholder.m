@@ -30,10 +30,10 @@
     id <UITableViewDataSource> dataSource = self.dataSource;
     NSInteger sections = 1;//默认一组
     if ([dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-        sections = [dataSource numberOfSectionsInTableView:self];//获取当前TableView组数
+        sections = [dataSource numberOfSectionsInTableView:self] - 1;//获取当前TableView组数
     }
     
-    for (NSInteger i = 0; i < sections; i++) {
+    for (NSInteger i = 0; i <= sections; i++) {
         NSInteger rows = [dataSource tableView:self numberOfRowsInSection:sections];//获取当前TableView各组行数
         if (rows) {
             isEmpty = NO;//若行数存在，不为空

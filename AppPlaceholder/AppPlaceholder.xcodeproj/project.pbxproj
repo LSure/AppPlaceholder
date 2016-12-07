@@ -23,6 +23,7 @@
 		88D248B21DF0133800ACA674 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D248AB1DF0133800ACA674 /* ViewController.m */; };
 		88D248FD1DF017F500ACA674 /* sure_placeholder_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D248FB1DF017F500ACA674 /* sure_placeholder_error@2x.png */; };
 		88D248FE1DF017F500ACA674 /* sure_placeholder_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D248FC1DF017F500ACA674 /* sure_placeholder_error@3x.png */; };
+		88D249831DF7AA3C00ACA674 /* MultiGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D249821DF7AA3C00ACA674 /* MultiGroupTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		88D248AB1DF0133800ACA674 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		88D248FB1DF017F500ACA674 /* sure_placeholder_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure_placeholder_error@2x.png"; sourceTree = "<group>"; };
 		88D248FC1DF017F500ACA674 /* sure_placeholder_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure_placeholder_error@3x.png"; sourceTree = "<group>"; };
+		88D249811DF7AA3C00ACA674 /* MultiGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiGroupTableViewController.h; sourceTree = "<group>"; };
+		88D249821DF7AA3C00ACA674 /* MultiGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiGroupTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				88D248A71DF0133800ACA674 /* SureCustomViewController.m */,
 				88D248A11DF0133800ACA674 /* CustomPlaceholderView.h */,
 				88D248A21DF0133800ACA674 /* CustomPlaceholderView.m */,
+				88D249811DF7AA3C00ACA674 /* MultiGroupTableViewController.h */,
+				88D249821DF7AA3C00ACA674 /* MultiGroupTableViewController.m */,
 				88D248A31DF0133800ACA674 /* placehold.png */,
 			);
 			path = Example;
@@ -222,6 +227,7 @@
 				88D248B11DF0133800ACA674 /* SureTableViewController.m in Sources */,
 				88D2484A1DEE6A2B00ACA674 /* main.m in Sources */,
 				88D2487A1DEEC41500ACA674 /* UICollectionView+Sure_Placeholder.m in Sources */,
+				88D249831DF7AA3C00ACA674 /* MultiGroupTableViewController.m in Sources */,
 				88D248AC1DF0133800ACA674 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

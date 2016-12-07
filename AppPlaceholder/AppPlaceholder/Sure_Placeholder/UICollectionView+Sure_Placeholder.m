@@ -30,10 +30,10 @@
     id <UICollectionViewDataSource> dataSource = self.dataSource;
     NSInteger sections = 1;
     if ([dataSource respondsToSelector:@selector(numberOfSectionsInCollectionView:)]) {
-        sections = [dataSource numberOfSectionsInCollectionView:self];
+        sections = [dataSource numberOfSectionsInCollectionView:self] - 1;
     }
     
-    for (NSInteger i = 0; i < sections; i++) {
+    for (NSInteger i = 0; i <= sections; i++) {
         NSInteger rows = [dataSource collectionView:self numberOfItemsInSection:sections];
         if (rows) {
             isEmpty = NO;
