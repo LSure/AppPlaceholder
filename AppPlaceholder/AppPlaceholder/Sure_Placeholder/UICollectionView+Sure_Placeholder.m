@@ -34,7 +34,7 @@
     }
     
     for (NSInteger i = 0; i <= sections; i++) {
-        NSInteger rows = [dataSource collectionView:self numberOfItemsInSection:sections];
+        NSInteger rows = [dataSource collectionView:self numberOfItemsInSection:i];
         if (rows) {
             isEmpty = NO;
         }

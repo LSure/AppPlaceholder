@@ -34,7 +34,7 @@
     }
     
     for (NSInteger i = 0; i <= sections; i++) {
-        NSInteger rows = [dataSource tableView:self numberOfRowsInSection:sections];//获取当前TableView各组行数
+        NSInteger rows = [dataSource tableView:self numberOfRowsInSection:i];//获取当前TableView各组行数
         if (rows) {
             isEmpty = NO;//若行数存在，不为空
         }
