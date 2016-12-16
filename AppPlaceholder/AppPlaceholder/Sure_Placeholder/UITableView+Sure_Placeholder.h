@@ -10,6 +10,7 @@
 
 @interface UITableView (Sure_Placeholder)
 
+@property (nonatomic, assign) BOOL firstReload;
 @property (nonatomic, strong) UIView *placeholderView;
 @property (nonatomic,   copy) void(^reloadBlock)(void);
 

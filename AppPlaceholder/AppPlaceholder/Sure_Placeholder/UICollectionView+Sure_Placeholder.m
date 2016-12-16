@@ -20,7 +20,10 @@
 }
 
 - (void)sure_reloadData {
-    [self checkEmpty];
+    if (!self.firstReload) {//非首次刷新检测是否为空 解决数据加载未完成显示占位图情况
+        [self checkEmpty];
+    }
+    self.firstReload = NO;
     [self sure_reloadData];
 }
 
@@ -53,6 +56,7 @@
 }
 
 - (void)makeDefaultPlaceholderView {
+    self.bounds = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     SurePlaceholderView *placeholderView = [[SurePlaceholderView alloc]initWithFrame:self.bounds];
     __weak typeof(self) weakSelf = self;
     [placeholderView setReloadClickBlock:^{
@@ -69,6 +73,14 @@
 
 - (void)setPlaceholderView:(UIView *)placeholderView {
     objc_setAssociatedObject(self, @selector(placeholderView), placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)firstReload {
+    return [objc_getAssociatedObject(self, @selector(firstReload)) boolValue];
+}
+
+- (void)setFirstReload:(BOOL)firstReload {
+    objc_setAssociatedObject(self, @selector(firstReload), @(firstReload), OBJC_ASSOCIATION_RETAIN);
 }
 
 - (void (^)(void))reloadBlock {
