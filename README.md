@@ -94,3 +94,12 @@ if (is_Net_Available) {
 [零行代码为App添加无数据占位图🔗](https://github.com/LSure/AppPlaceholder)
 
 既然为零代码，因此使用方法将Sure_Placeholder文件夹拖入工程即可。有任何问题大家可以评论指出。
+
+目前已修复问题与功能添加
+修复固定数据多组显示问题
+修复首次网络请求未完成占位图显示问题
+因tableView、collectionView在创建后系统会默认调用一次reloadData，所以会出现网络请求未完成即展示占位图的问题。类别中新增加属性firstReload（首次加载）加以限制，若希望在首次网络请求未完成时不显示占位图，可将firstReload置为YES即可。
+```
+_tableView.firstReload = YES;
+```
+代码持续更新中，欢迎大家 check out！
