@@ -80,7 +80,7 @@
 }
 
 - (void)setFirstReload:(BOOL)firstReload {
-    objc_setAssociatedObject(self, @selector(firstReload), @(firstReload), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @selector(firstReload), @(firstReload), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (void (^)(void))reloadBlock {
