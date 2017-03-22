@@ -1,8 +1,10 @@
 # AppPlaceholder
 ######前文提要
+
 近期准备重构项目，需要重写一些通用模块，正巧需要设置App异常加载占位图的问题，心血来潮设想是否可以零行代码解决此问题，特在此分享实现思路。
 
 ######思路分享
+
 对于App占位图，通常需要考虑的控件有tableView、collectionView和webView，异常加载情况区分为无数据和网络异常等。
 
 既然要实现零代码形式，因此就不能继承原始类重写或添加方法等方式，而是通过对对应控件添加类别（分类）来实现。
@@ -44,6 +46,7 @@
 需要注意的为webView占位图是否显示的判断，一种情况为webView调用其```webView: didFailLoadWithError:```方法，第二种为webView完成加载显示为空的情况。但存在的一个问题是，webView没有必选的协议方法，或可能根本没有设置代理。因此无法很好的判断webView是否响应其协议方法。因此该demo暂时没有添加webView的占位图，如果有好的想法可以评论指出。
 
 ######接下来说最重要的一步，如何实现零行代码添加占位图呢？
+
 其实实现思路非常简单，如果可以让tableView在执行reloadData时自动检测其行数就可以了。也就是我们需要在reloadData原有方法的基础上添加checkEmpty此方法。
 
 这里又能体现到Runtime Method Swizzling的作用了，我们可以通过Method Swizzling替换reloadData方法，给予它新的实现。核心代码如下：
